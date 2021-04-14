@@ -1,0 +1,18 @@
+{% extends 'contractacio/base.html' %}
+
+{% block title %}
+    <h1>Detall de la licitació seleccionada</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="post">
+        <h2>Codi: {{ contracte.codi }} - Denominació: {{ contracte.denominacio }}</h2>
+        <p> Expedient: {{ contracte.codi_expedient }}- Objecte: {{ contracte.objecte }}</p>
+        <p> Pressupost: {{ contracte.pressupost }} EUR //  Valor estimat: {{ contracte.valor_estimat }} EUR</p>
+        <p> Lloc d'execució: {{ contracte.lloc_execucio }} // Duració del contracte: {{ contracte.duracio }}</p>
+        <p> Tipus: {{ contracte.tipus }} // Subtipus: {{ contracte.subtipus }}</p>
+        <p>TERMINI DE PRESENTACIÓ D'INSTÀNCIES: {{ contracte.termini_presentacio_instancies|linebreaksbr }}</p>
+        <hr/>
+    </div>
+    <h3><a href="../..">ENRERE</a></h3>
+{% endblock %}

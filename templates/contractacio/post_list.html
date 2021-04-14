@@ -1,0 +1,19 @@
+{% extends 'contractacio/base.html' %}
+
+{% block title %}
+    <h1>Llistat de licitacions vigents</h1>
+{% endblock %}
+
+{% block content %}
+{% for contracte in contractes %}
+    <div class="post">
+        <h2><a href="{% url 'detall' pk=contracte.pk %}">Codi: {{ contracte.codi }} - Denominació: {{ contracte.denominacio }}</a></h2>
+        <p> Expedient: {{ contracte.codi_expedient }}- Objecte: {{ contracte.objecte }}</p>
+        <p> Pressupost: {{ contracte.pressupost }} EUR //  Valor estimat: {{ contracte.valor_estimat }} EUR</p>
+        <p> Lloc d'execució: {{ contracte.lloc_execucio }} // Duració del contracte: {{ contracte.duracio }}</p>
+        <p> Tipus: {{ contracte.tipus }} // Subtipus: {{ contracte.subtipus }}</p>
+        <p>TERMINI DE PRESENTACIÓ D'INSTÀNCIES: {{ contracte.termini_presentacio_instancies|linebreaksbr }}</p>
+        <hr/>
+    </div>
+{% endfor %}
+{% endblock %}
